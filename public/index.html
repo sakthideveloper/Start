@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>Welcome to Mean App!</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script>
+		<script src="javascripts/App.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+	</head>
+	<body ng-app="App">
+         <div class="container">
+		<nav class="navbar navbar-default navbar-fixed-top">
+             <div class="container">
+                    <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"> MEAN <span style="color:red;">APP</span></a>
+                    </div>
+                 <ul class="nav navbar-nav">
+                     <li class="active"><a href="/">Home</a></li>
+                     <li><a href="#about">About</a></li>
+                     <li><a href="#contact">Contact</a></li>
+                     <li class="dropdown">
+                         <a href="#/article" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Article <span class="caret"></span></a>
+                         <ul class="dropdown-menu" role="menu">
+                             <li><a href="#/create">Create Article</a></li>
+                             <li><a href="#/article">View Article</a></li>
+
+                         </ul>
+                     </li>
+                 </ul>
+                   <ul class="nav navbar-nav navbar-right">
+                    <li ng-hide="authenticated"><a href="#/login">Login</a></li>
+                    <li ng-hide="authenticated"><a href="#/register">Register</a></li>
+                    <li class="dropdown" ng-show="authenticated">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> {{current_user}} &nbsp;<i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                       <li ng-show="authenticated"><a href="" ng-click="session.signout()">Logout</a></li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+
+                       
+                    </ul>
+            </nav>
+             </div>
+     
+			<div class="col-md-offset-2 col-md-8">
+				<div ng-view>
+				</div>
+			</div>
+		</div>
+        
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	</body>
+</html>
